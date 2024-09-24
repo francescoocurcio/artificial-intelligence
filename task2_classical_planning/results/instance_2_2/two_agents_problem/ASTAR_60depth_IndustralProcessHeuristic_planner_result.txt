@@ -1,0 +1,42 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+
+parsing domain file "domain.pddl" done successfully
+parsing problem file "problem_two_robots_instance.pddl" done successfully
+# WARNING: Unable to get Instrumentation. Dynamic Attach failed. You may add this JAR as -javaagent manually, or supply -Djdk.attach.allowAttachSelf
+# WARNING: Unable to attach Serviceability Agent. You can try again with escalated privileges. Two options: a) use -Djol.tryWithSudo=true to try with sudo; b) echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+
+problem instantiation done successfully (342 actions, 77 fluents)
+
+* Starting A* Search with IndustrialProcessHeuristic 
+* A* search succeeded
+
+found plan as follows:
+
+00: (          fill_box_in_warehouse robot1 box2 bolt warehouse carrier1) [0]
+01: (        load_box_from_location robot1 box2 warehouse carrier1 slot1) [0]
+02: (         fill_box_in_warehouse robot1 box1 screw warehouse carrier1) [0]
+03: (        load_box_from_location robot1 box1 warehouse carrier1 slot2) [0]
+04: (          fill_box_in_warehouse robot1 box3 bolt warehouse carrier1) [0]
+05: (        load_box_from_location robot1 box3 warehouse carrier1 slot3) [0]
+06: (               move_to_location robot1 warehouse location1 carrier1) [0]
+07: (               move_to_location robot1 location1 location2 carrier1) [0]
+08: (           enter_workstation robot1 location2 workstation2 carrier1) [0]
+09: (put_down_box_in_workstation robot1 box3 workstation2 carrier1 slot2) [0]
+10: (    empty_box_in_workstation robot1 box3 workstation2 bolt carrier1) [0]
+11: (            exit_workstation robot1 location2 workstation2 carrier1) [0]
+12: (           enter_workstation robot1 location2 workstation3 carrier1) [0]
+13: (put_down_box_in_workstation robot1 box1 workstation3 carrier1 slot3) [0]
+14: (   empty_box_in_workstation robot1 box1 workstation3 screw carrier1) [0]
+15: (put_down_box_in_workstation robot1 box2 workstation3 carrier1 slot1) [0]
+16: (    empty_box_in_workstation robot1 box2 workstation3 bolt carrier1) [0]
+
+time spent:       0.08 seconds parsing 
+                  0.27 seconds encoding 
+                  4.17 seconds searching
+                  4.51 seconds total time
+
+memory used:      1.26 MBytes for problem representation
+                  8.57 MBytes for searching
+                  9.83 MBytes total
+
+

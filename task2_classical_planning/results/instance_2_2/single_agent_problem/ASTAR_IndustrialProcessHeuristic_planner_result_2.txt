@@ -1,0 +1,42 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+
+parsing domain file "domain.pddl" done successfully
+parsing problem file "problem.pddl" done successfully
+# WARNING: Unable to get Instrumentation. Dynamic Attach failed. You may add this JAR as -javaagent manually, or supply -Djdk.attach.allowAttachSelf
+# WARNING: Unable to attach Serviceability Agent. You can try again with escalated privileges. Two options: a) use -Djol.tryWithSudo=true to try with sudo; b) echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+
+problem instantiation done successfully (190 actions, 63 fluents)
+
+* Starting A* Search with IndustrialProcessHeuristic 
+* A* search succeeded
+
+found plan as follows:
+
+00: (         fill_box_in_warehouse robot box3 screw warehouse carrier) [0]
+01: (        load_box_from_location robot box3 warehouse carrier slot2) [0]
+02: (          fill_box_in_warehouse robot box1 bolt warehouse carrier) [0]
+03: (          fill_box_in_warehouse robot box2 bolt warehouse carrier) [0]
+04: (        load_box_from_location robot box2 warehouse carrier slot3) [0]
+05: (        load_box_from_location robot box1 warehouse carrier slot1) [0]
+06: (               move_to_location robot warehouse location1 carrier) [0]
+07: (               move_to_location robot location1 location2 carrier) [0]
+08: (           enter_workstation robot location2 workstation3 carrier) [0]
+09: (put_down_box_in_workstation robot box2 workstation3 carrier slot1) [0]
+10: (put_down_box_in_workstation robot box3 workstation3 carrier slot3) [0]
+11: (   empty_box_in_workstation robot box3 workstation3 screw carrier) [0]
+12: (    empty_box_in_workstation robot box2 workstation3 bolt carrier) [0]
+13: (            exit_workstation robot location2 workstation3 carrier) [0]
+14: (           enter_workstation robot location2 workstation2 carrier) [0]
+15: (put_down_box_in_workstation robot box1 workstation2 carrier slot2) [0]
+16: (    empty_box_in_workstation robot box1 workstation2 bolt carrier) [0]
+
+time spent:       0.07 seconds parsing 
+                  0.13 seconds encoding 
+                211.73 seconds searching
+                211.92 seconds total time
+
+memory used:      0.78 MBytes for problem representation
+                957.24 MBytes for searching
+                958.02 MBytes total
+
+
